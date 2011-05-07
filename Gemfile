@@ -10,7 +10,9 @@ gem 'sqlite3'
 # Asset template engines
 gem 'sass'
 gem 'coffee-script'
-gem 'uglifier'
+#gem 'uglifier'
+gem "therubyracer-heroku", "~>0.8.0"
+gem "uglifier", "~>0.5.0"
 
 gem 'jquery-rails'
 
@@ -29,6 +31,5 @@ group :test do
 end
 
 group :production do
-  gem 'therubyracer-heroku'
   gem 'pg'
 end
