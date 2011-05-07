@@ -1,0 +1,28 @@
+/* 
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+  You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+.wrapper {
+	margin:0 auto;
+	width:980px;
+}
+
+.header {
+	background:#e9f0f9 url(/assets/header_bg.jpg) repeat-x;
+	height:200px;
+
+	h1#logo {
+		text-align:center;
+	}
+}
+
+.footer {
+	background:#e9f0f9 url(/assets/footer_bg.jpg) repeat-x;
+	height:120px;	
+}
+
+.content {
+	
+}
