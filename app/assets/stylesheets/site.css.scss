@@ -4,25 +4,111 @@
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
+html, body {
+	color:#284512;
+	font-family:"Tahoma";
+}
+
 .wrapper {
 	margin:0 auto;
 	width:980px;
 }
 
-.header {
-	background:#e9f0f9 url(/assets/header_bg.jpg) repeat-x;
-	height:200px;
+a {
+	color:#34410a;
+	text-decoration:none;
 
-	h1#logo {
-		text-align:center;
+	&:hover { text-decoration:underline; }
+}
+
+h1.logo {
+	font-size:100%;
+	text-indent:-9000px;
+	text-decoration:none;
+	
+	a {
+		background:url(/assets/logo.png) no-repeat;
+		display:block;
+		height:200px;
+		margin:0 auto;
+		width:513px;
 	}
 }
 
+h2 {
+	font-size:1.3em;
+	font-weight:bold;
+	text-align:center;
+}
+
+form {
+	margin:10px 0;
+
+	label {
+		font-weight:bold;
+	}
+
+	input {
+		font-size:1.1em;
+		margin-right:20px;
+		padding:5px 10px;
+		width:100px;
+	}
+}
+
+.header {
+	background:#e9f0f9;
+	border-bottom:#ebeaeb 4px solid;
+	height:210px;
+}
+
 .footer {
-	background:#e9f0f9 url(/assets/footer_bg.jpg) repeat-x;
-	height:120px;	
+	background:#e9f0f9;
+	border-top:#ebeaeb 4px solid;
+	height:100px;	
+	padding:10px;
+
+	p {
+		color:#666666;
+		line-height:22px;
+	}
+
+	h1.logo {
+		float:right;
+
+		a {
+			background:url(/assets/logo_footer.png) no-repeat;
+			height:70px;
+			width:180px;
+		}
+	}
 }
 
 .content {
-	
+	padding:25px 10px;
+
+	.devices {
+		padding:25px 0 10px 0;
+		text-align:center;
+	}
+
+	.box {
+		margin:0 auto;
+		width:700px;
+
+		.map {
+			border:#333333 solid 2px;
+			height:350px;
+		}
+
+		.legend {
+			margin:10px 0;
+			text-align: center;
+
+			span {
+				line-height:80px;
+				vertical-align:top;
+			}
+		}
+	}
 }
