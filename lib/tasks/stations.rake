@@ -62,6 +62,25 @@ def load_stations
   stations
 end
 
+# En el xml que retorna el servicio, al parecer cada parametro tiene un ID
+# Los IDs parecen que son 1:SO2, 8:NO2, 10:Particulas, 14:O3
 def save_stations(stations)
-  puts stations.inspect
+  stations.each do |id, data|
+    station = Station.find_by_remote_id(id)
+    Station.create(remote_id: id, name: data['name'], longitude: 0, latitude: 0) unless station
+
+    so2 = no2 = particles = o3 = nil
+    data['params'].each do |param|
+      so2       = param['valorTexto'] if param['cana'].eql?("1")
+      no2       = param['valorTexto'] if param['cana'].eql?("8")
+      particles = param['valorTexto'] if param['cana'].eql?("10")
+      o3        = param['valorTexto'] if param['cana'].eql?("14")
+    end
+    station.update_attributes({
+      :so2        => so2 || "No disponible",
+      :no2        => no2 || "No disponible",
+      :particles  => particles || "No disponible",
+      :o3         => o3 || "No disponible"
+    })
+  end
 end
