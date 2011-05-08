@@ -3,3 +3,8 @@
  *= require_self
  *= require_tree . 
 */
+
+@font-face {
+  font-family: "Harabara";
+  src: url(/assets/Harabara.ttf) format("truetype");
+}

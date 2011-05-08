@@ -1,0 +1,32 @@
+<div class="box">
+  <%= form_for :user, :url => search_path, :method => :get do |form| %>
+    <%= form.text_field :zip_code, :class => "zip_code" %>
+    <%= form.label :zip_code, "Zona: Ciudad de Las Palmas de Gran Canaria" %>
+  <% end  %>
+  <div id="map_canvas" class="map"></div>
+  <div class="legend small">
+    <span>Leyenda del mapa:</span>
+    <ul>
+      <li><img src="/assets/legend_good.png" alt="Bueno" /><br />Bueno</li>
+      <li><img src="/assets/legend_regular.png" alt="Regular" /><br />Regular</li>
+      <li><img src="/assets/legend_bad.png" alt="Malo" /><br />Malo</li>
+      <li><img src="/assets/legend_off.png" alt="No Disponible" /><br />No Disponible</li>
+    </ul>
+  </div>
+  <div class="status bad">
+    La calidad del aire en esta zona es <span>MALA</span><br/>
+    Se recomienda no correr porque puede ser perjudicial para la salud
+  </div>
+  <%= form_for :user, :url => search_path, :method => :get, :html => {:class => "subscribe"} do |form| %>
+    <%= form.label :email, "Danos tu email y te notificaremos cuando el aire de esta zona esté contaminado", :class => "email" %>
+    <%= form.text_field :email, :class => "email" %>
+  <% end  %>
+  <div class="share">
+    <div class="share_icons">
+      <a href="#" class="facebook">Compartir en Facebook</a>
+      <a href="#" class="twitter">Compartir en Twitter</a>
+    </div>
+    <div class="share_text">Tu que te preocupas por el medio ambiente de tu zona comparte esta noticia<br/>Dar a conocer es el primer paso</div>
+  </div>
+  <br class="clear"/>
+</div>

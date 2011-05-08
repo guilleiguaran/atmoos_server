@@ -6,7 +6,8 @@
 
 html, body {
 	color:#284512;
-	font-family:"Tahoma";
+	font-family:"Harabara";
+	letter-spacing:1px;
 }
 
 .wrapper {
@@ -36,25 +37,42 @@ h1.logo {
 }
 
 h2 {
-	font-size:1.3em;
-	font-weight:bold;
+	font-size:1.5em;
 	text-align:center;
 }
 
 form {
-	margin:10px 0;
+	margin:30px 0 10px 0;
 
 	label {
+		font-size:1.2em;
 		font-weight:bold;
+
+		&.email {
+			color:#9bba36;
+			display:inline-block;
+			width:400px;
+		}
 	}
 
 	input {
 		font-size:1.1em;
-		margin-right:20px;
 		padding:5px 10px;
-		width:100px;
+
+		&.zip_code {
+			margin-right:20px;
+			width:100px;
+		}
+		&.email {
+			float:right;
+			width:270px;
+		}
 	}
+
+	&.subscribe { clear:both; }
 }
+
+.clear { clear:both; }
 
 .header {
 	background:#e9f0f9;
@@ -65,7 +83,7 @@ form {
 .footer {
 	background:#e9f0f9;
 	border-top:#ebeaeb 4px solid;
-	height:100px;	
+	height:80px;	
 	padding:10px;
 
 	p {
@@ -102,12 +120,77 @@ form {
 		}
 
 		.legend {
-			margin:10px 0;
-			text-align: center;
+			padding:20px 0;
+			text-align:center;
 
 			span {
 				line-height:80px;
 				vertical-align:top;
+			}
+
+			ul {
+				display:inline;
+
+				li {
+					display:inline-block;
+					text-align:center;
+					width:100px;
+				}
+			}
+
+			&.small {
+				text-align:right;
+				
+				ul {
+					display:inline;
+
+					li {
+						font-size:0.76em;
+						width:78px;
+
+						img { width:48px;	}
+					}
+				}
+			}
+		}
+
+		.status {
+			color:#9bba36;
+			font-size:1.2em;
+			line-height:22px;
+			min-height:80px;
+			padding:15px 0 0 105px;
+
+			&.good { background:url(/assets/legend_good.png) no-repeat 25px 5px; }
+			&.regular { background:url(/assets/legend_regular.png) no-repeat 25px 5px; }
+			&.bad { background:url(/assets/legend_bad.png) no-repeat 25px 5px; }
+			&.off { background:url(/assets/legend_off.png) no-repeat 25px 5px; }
+
+			span { color:#284512; }
+		}
+
+		.share {
+			font-size:1.2em;
+			line-height:22px;
+			padding:20px 0;
+
+			.share_icons {
+				float:left;
+
+					a {
+					display:block;
+					height:54px;
+					text-indent:-9000px;
+					width:55px;
+
+					&.facebook { background:url(/assets/facebook.png) no-repeat; }
+					&.twitter { background:url(/assets/twitter.png) no-repeat; }
+				}
+			}
+
+			.share_text {
+				float:right;
+				padding-top:30px;
 			}
 		}
 	}
