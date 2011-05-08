@@ -8,7 +8,11 @@ AtmoosServer::Application.routes.draw do
 
   match '/search' => 'site#search', :as => :search
 
-  resources :stations
+  resources :stations do
+    collection do
+      get 'search'
+    end
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
