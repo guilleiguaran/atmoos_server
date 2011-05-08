@@ -51,7 +51,7 @@ form {
 		&.email {
 			color:#9bba36;
 			display:inline-block;
-			width:400px;
+			width:340px;
 		}
 	}
 
@@ -64,7 +64,7 @@ form {
 		}
 		&.email {
 			float:right;
-			width:270px;
+			width:176px;
 		}
 		&.submit {
 			background:transparent url(/assets/go.png) no-repeat 0px -4px;
@@ -76,6 +76,18 @@ form {
 			width:60px;
 
 			&:active { background:transparent url(/assets/go_hover.png) no-repeat 0px -4px; }
+		}
+		&.subscribe {
+			background:transparent url(/assets/subscribe.png) no-repeat 0px 0px;
+			border:none;
+			cursor:pointer;
+			float:right;
+			height:40px;
+			padding:5px 0;
+			text-indent:-9000px;
+			width:150px;
+
+			&:active { background:transparent url(/assets/subscribe_hover.png) no-repeat 0px 0px; }
 		}
 	}
 

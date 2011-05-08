@@ -50,18 +50,19 @@
   </div>
   <%= form_for :user, :url => search_path, :method => :get, :html => {:class => "subscribe"} do |form| %>
     <%= form.label :email, "Danos tu email y te notificaremos cuando el aire de esta zona esté contaminado", :class => "email" %>
+    <%= form.submit "Subscribirme", :class => "subscribe" %>
     <%= form.text_field :email, :class => "email" %>
   <% end  %>
   <div class="share">
     <div class="share_icons">
-      <a href="#" class="facebook">Compartir en Facebook</a>
-      <a href="#" class="twitter">Compartir en Twitter</a>
+      <a href="#" target="blank" class="facebook">Compartir en Facebook</a>
+      <a href="#" target="blank" class="twitter">Compartir en Twitter</a>
     </div>
     <div class="share_text">Tu que te preocupas por el medio ambiente de tu zona comparte esta noticia<br/>Dar a conocer es el primer paso</div>
   </div>
   <br class="clear"/>
   <div class="share">
-    <a href="http://kalimatec.blogspot.com/" class="blog">Visita nuestro blog</a>
+    <a href="http://kalimatec.blogspot.com/" target="blank" class="blog">Visita nuestro blog</a>
     <span class="blog">Conoce mas sobre nuestro proyecto</span>
   </div>
 </div>
