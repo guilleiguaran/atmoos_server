@@ -1,6 +1,7 @@
 <div class="box">
   <%= form_for :user, :url => search_path, :method => :get do |form| %>
     <%= form.text_field :zip_code, :class => "zip_code" %>
+    <%= form.submit "Buscar", :class => "submit" %>
     <%= form.label :zip_code, "Zona: Ciudad de Las Palmas de Gran Canaria" %>
   <% end  %>
   <div id="map_canvas" class="map"></div>

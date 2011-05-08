@@ -19,7 +19,7 @@ class StationsController < ApplicationController
   end
 
   def search
-    @station = Station.near([params[:longitude].to_f,params[:latitude].to_f]).first
+    @station = Station.near([params[:latitude].to_f,params[:longitude].to_f]).first
     respond_with(@station) do |format|
       format.json { render :json => @station }
     end

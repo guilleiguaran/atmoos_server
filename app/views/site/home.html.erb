@@ -1,3 +1,10 @@
+<% content_for :javascript do -%>
+  <script type="text/javascript">
+    window.onload = function() {
+      initializeMap();
+    }
+  </script>
+<% end -%>
 <div class="devices">
   <img src="/assets/phones.png" alt="Telefonos" />
 </div>
@@ -14,6 +21,7 @@
   </div>
   <%= form_for :user, :url => search_path, :method => :get do |form| %>
     <%= form.text_field :zip_code, :class => "zip_code" %>
+    <%= form.submit "Buscar", :class => "submit" %>
     <%= form.label :zip_code, "Introduce tu código postal y conoce la calidad del aire de tu zona" %>
   <% end  %>
 </div>

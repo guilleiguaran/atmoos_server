@@ -60,12 +60,22 @@ form {
 		padding:5px 10px;
 
 		&.zip_code {
-			margin-right:20px;
-			width:100px;
+			width:70px;
 		}
 		&.email {
 			float:right;
 			width:270px;
+		}
+		&.submit {
+			background:transparent url(/assets/go.png) no-repeat 0px -4px;
+			border:none;
+			cursor:pointer;
+			height:60px;
+			padding:5px 0;
+			text-indent:-9000px;
+			width:60px;
+
+			&:active { background:transparent url(/assets/go_hover.png) no-repeat 0px -4px; }
 		}
 	}
 
