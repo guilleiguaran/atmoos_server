@@ -42,6 +42,7 @@ GEM
     erubis (2.7.0)
     execjs (0.3.3)
       multi_json (~> 1.0)
+    geocoder (0.9.13)
     hike (1.0.0)
     i18n (0.6.0beta1)
     jquery-rails (1.0)
@@ -104,6 +105,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
+  geocoder
   jquery-rails
   nokogiri
   pg

@@ -14,6 +14,7 @@ gem 'coffee-script'
 gem "therubyracer-heroku", "~>0.8.0"
 gem "uglifier", "~>0.5.0"
 gem 'nokogiri'
+gem 'geocoder'
 
 gem 'jquery-rails'
 
