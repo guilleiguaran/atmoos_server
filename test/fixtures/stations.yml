@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  remote_id: 1
+  name: MyString
+  so2: MyString
+  no2: MyString
+  particles: MyString
+  o3: MyString
+
+two:
+  remote_id: 1
+  name: MyString
+  so2: MyString
+  no2: MyString
+  particles: MyString
+  o3: MyString

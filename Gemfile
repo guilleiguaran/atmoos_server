@@ -13,6 +13,7 @@ gem 'coffee-script'
 #gem 'uglifier'
 gem "therubyracer-heroku", "~>0.8.0"
 gem "uglifier", "~>0.5.0"
+gem 'nokogiri'
 
 gem 'jquery-rails'
 
