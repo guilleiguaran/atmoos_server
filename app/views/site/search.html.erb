@@ -1,6 +1,37 @@
+<% content_for :javascript do -%>
+  <script type="text/javascript">
+    var map;
+
+    window.onload = function() {
+      initializeMap();
+
+      setTimeout("placeStation()", 1000);
+    }
+
+    function placeStation() {
+      codeLatLng(<%= "{'lat':#{@station.latitude}, 'lng':#{@station.longitude}, 'name':'#{@station.name}'}" %>);
+    }
+
+    function codeLatLng(input) {
+      var latlng = new google.maps.LatLng(input.lat, input.lng);
+      var marker = new google.maps.Marker({
+          position: latlng, 
+          map: map
+      });
+      var infowindow = new google.maps.InfoWindow();
+      infowindow.setContent("Estacion:<br/>" + input.name);
+      infowindow.open(map, marker);
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
+      map.setCenter(latlng);
+      map.setZoom(12);
+    }
+  </script>
+<% end -%>
 <div class="box">
   <%= form_for :user, :url => search_path, :method => :get do |form| %>
-    <%= form.text_field :zip_code, :class => "zip_code" %>
+    <%= form.text_field :zip_code, :class => "zip_code", :value => params[:user][:zip_code] %>
     <%= form.submit "Buscar", :class => "submit" %>
     <%= form.label :zip_code, "Zona: Ciudad de Las Palmas de Gran Canaria" %>
   <% end  %>
@@ -14,8 +45,8 @@
       <li><img src="/assets/legend_off.png" alt="No Disponible" /><br />No Disponible</li>
     </ul>
   </div>
-  <div class="status bad">
-    La calidad del aire en esta zona es <span>MALA</span><br/>
+  <div class="status <%= @station.air_status %>">
+    La calidad del aire en esta zona es <span><%= air_status_string(@station.air_status).upcase %></span><br/>
     Se recomienda no correr porque puede ser perjudicial para la salud
   </div>
   <%= form_for :user, :url => search_path, :method => :get, :html => {:class => "subscribe"} do |form| %>

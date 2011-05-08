@@ -6,11 +6,11 @@
 //= require_tree .
 
 function initializeMap() {
-  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var latlng = new google.maps.LatLng(28.10723210037073, -15.4301593818705);
   var mapOptions = {
-    zoom: 8,
+    zoom: 7,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 }

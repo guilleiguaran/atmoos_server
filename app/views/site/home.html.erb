@@ -1,7 +1,39 @@
 <% content_for :javascript do -%>
   <script type="text/javascript">
+    var infowindows = new Array();
+    var map;
+
     window.onload = function() {
       initializeMap();
+
+      setTimeout("placeStations()", 500);
+    }
+
+    function placeStations() {
+      <% @stations.each do |st| %>
+        codeLatLng(<%= "{'lat':#{st.latitude}, 'lng':#{st.longitude}, 'name':'#{st.name}'}" %>);
+      <% end %>
+    }
+
+    function codeLatLng(input) {
+      var latlng = new google.maps.LatLng(input.lat, input.lng);
+      var marker = new google.maps.Marker({
+          position: latlng, 
+          map: map
+      });
+      var infowindow = new google.maps.InfoWindow();
+      infowindow.setContent("Estacion:<br/>" + input.name);
+      google.maps.event.addListener(marker, 'click', function() {
+        closeInfoWindows();
+        infowindow.open(map,marker);
+      });
+      infowindows.push(infowindow);
+    }
+
+    function closeInfoWindows() {
+      for(i=0;i<infowindows.length;i++) {
+        infowindows[i].close();
+      }
     }
   </script>
 <% end -%>

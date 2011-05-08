@@ -5,6 +5,6 @@ class SiteController < ApplicationController
   end
 
   def search
-    @station = Station.near('35017, Espana').first
+    @station = Station.near("#{params[:user][:zip_code]}, Espana").first
   end
 end
