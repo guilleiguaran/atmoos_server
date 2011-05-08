@@ -82,6 +82,11 @@ form {
 	&.subscribe { clear:both; }
 }
 
+small {
+	color:#284512;
+	font-size:0.7em;
+}
+
 .clear { clear:both; }
 
 .header {
@@ -156,7 +161,7 @@ form {
 
 					li {
 						font-size:0.76em;
-						width:78px;
+						width:84px;
 
 						img { width:48px;	}
 					}
@@ -194,7 +199,14 @@ form {
 
 				&.facebook { background:url(/assets/facebook.png) no-repeat; }
 				&.twitter { background:url(/assets/twitter.png) no-repeat; }
-				&.blog { background:url(/assets/blog.png) no-repeat; }
+				&.blog { background:url(/assets/blog.png) no-repeat; display:inline-block; }
+			}
+
+			span.blog {
+				display:inline-block;
+				padding-left:5px;
+				vertical-align:top;
+				line-height:52px;
 			}
 
 			.share_text {

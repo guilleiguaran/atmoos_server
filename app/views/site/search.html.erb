@@ -46,8 +46,7 @@
     </ul>
   </div>
   <div class="status <%= @station.air_status %>">
-    La calidad del aire en esta zona es <span><%= air_status_string(@station.air_status).upcase %></span><br/>
-    Se recomienda no correr porque puede ser perjudicial para la salud
+    <%= air_status_string(@station.air_status) %>
   </div>
   <%= form_for :user, :url => search_path, :method => :get, :html => {:class => "subscribe"} do |form| %>
     <%= form.label :email, "Danos tu email y te notificaremos cuando el aire de esta zona esté contaminado", :class => "email" %>
@@ -62,7 +61,7 @@
   </div>
   <br class="clear"/>
   <div class="share">
-    <a href="#" class="blog">Visita nuestro blog</a>
-    Conoce mas sobre nuestro proyecto
+    <a href="http://kalimatec.blogspot.com/" class="blog">Visita nuestro blog</a>
+    <span class="blog">Conoce mas sobre nuestro proyecto</span>
   </div>
 </div>
