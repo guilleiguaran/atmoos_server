@@ -18,6 +18,9 @@
 
   <div class="content">
     <div class="wrapper">
+      <% flash.each do |key, value| -%>
+        <p class="<%= key %>"><%= html_escape(value) %></p>
+      <% end -%>
       <h2>Tu aplicaci&oacute;n de <span>iPhone</span> y <span>android</span> para conocer la calidad del aire de tu zona</h2>
       <%= yield %>
     </div>

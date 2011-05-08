@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110508064341) do
+ActiveRecord::Schema.define(:version => 20110508211437) do
 
   create_table "stations", :force => true do |t|
     t.integer  "remote_id"
@@ -26,5 +26,12 @@ ActiveRecord::Schema.define(:version => 20110508064341) do
   end
 
   add_index "stations", ["remote_id"], :name => "index_stations_on_remote_id", :unique => true
+
+  create_table "subscriptions", :force => true do |t|
+    t.string   "email"
+    t.integer  "station_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
