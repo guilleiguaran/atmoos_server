@@ -9,7 +9,11 @@
     }
 
     function placeStation() {
+      <% if @station %>
       codeLatLng(<%= "{'lat':#{@station.latitude}, 'lng':#{@station.longitude}, 'name':'#{@station.name}'}" %>);
+      <% else %>
+        alert("No se encontro ese codigo postal. Por favor intenta de nuevo con un codigo valido.");
+      <% end %>
     }
 
     function codeLatLng(input) {
@@ -45,14 +49,17 @@
       <li><img src="/assets/legend_off.png" alt="No Disponible" /><br />No Disponible</li>
     </ul>
   </div>
+  <% if @station %>
   <div class="status <%= @station.air_status %>">
     <%= air_status_string(@station.air_status) %>
   </div>
-  <%= form_for :user, :url => search_path, :method => :get, :html => {:class => "subscribe"} do |form| %>
-    <%= form.label :email, "Danos tu email y te notificaremos cuando el aire de esta zona esté contaminado", :class => "email" %>
+  <%= form_for Subscription.new, :html => {:class => "subscribe"} do |form| %>
+    <%= form.hidden_field :station_id, :value => @station.id %>
+    <%= form.label :email, "Danos tu email y te notificaremos cuando el aire de esta zona este contaminado", :class => "email" %>
     <%= form.submit "Subscribirme", :class => "subscribe" %>
     <%= form.text_field :email, :class => "email" %>
   <% end  %>
+  <% end %>
   <div class="share">
     <div class="share_icons">
       <a href="#" target="blank" class="facebook">Compartir en Facebook</a>

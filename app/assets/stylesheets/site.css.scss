@@ -94,6 +94,22 @@ form {
 	&.subscribe { clear:both; }
 }
 
+p.notice {
+	margin:10px 0 30px 0;
+	text-align:center;
+	background:#BDDC58;
+	padding:10px;
+	border:1px solid #284512;
+}
+
+p.error {
+	margin:10px 0 30px 0;
+	text-align:center;
+	background:#EDB864;
+	padding:10px;
+	border:1px solid #452812;
+}
+
 small {
 	color:#284512;
 	font-size:0.7em;
