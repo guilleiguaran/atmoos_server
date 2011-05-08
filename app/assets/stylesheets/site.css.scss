@@ -45,7 +45,7 @@ form {
 	margin:30px 0 10px 0;
 
 	label {
-		font-size:1.2em;
+		font-size:1.1em;
 		font-weight:bold;
 
 		&.email {
@@ -144,7 +144,7 @@ form {
 				li {
 					display:inline-block;
 					text-align:center;
-					width:100px;
+					width:106px;
 				}
 			}
 
@@ -184,18 +184,17 @@ form {
 			line-height:22px;
 			padding:20px 0;
 
-			.share_icons {
-				float:left;
+			.share_icons { float:left; }
 
-					a {
-					display:block;
-					height:54px;
-					text-indent:-9000px;
-					width:55px;
+			a {
+				display:block;
+				height:54px;
+				text-indent:-9000px;
+				width:55px;
 
-					&.facebook { background:url(/assets/facebook.png) no-repeat; }
-					&.twitter { background:url(/assets/twitter.png) no-repeat; }
-				}
+				&.facebook { background:url(/assets/facebook.png) no-repeat; }
+				&.twitter { background:url(/assets/twitter.png) no-repeat; }
+				&.blog { background:url(/assets/blog.png) no-repeat; }
 			}
 
 			.share_text {
